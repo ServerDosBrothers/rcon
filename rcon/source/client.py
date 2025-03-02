@@ -77,4 +77,4 @@ class Client(BaseClient, socket_type=SOCK_STREAM):
         if enforce_id and response.id != request.id:
             raise SessionTimeout("packet ID mismatch")
 
-        return response.payload.decode(encoding)
+        return response.payload.decode(encoding, errors='replace')

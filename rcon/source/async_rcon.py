@@ -87,4 +87,4 @@ async def rcon(
     if enforce_id and response.id != request.id:
         raise SessionTimeout()
 
-    return response.payload.decode(encoding)
+    return response.payload.decode(encoding, errors='replace')
